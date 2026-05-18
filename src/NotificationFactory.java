@@ -3,6 +3,7 @@ public class NotificationFactory {
         if (type.equalsIgnoreCase("EMAIL")) return new EmailNotification();
         if (type.equalsIgnoreCase("SMS")) return new SmsNotification();
         if (type.equalsIgnoreCase("PUSH")) return new PushNotification();
+        if (type.equalsIgnoreCase("SLACK")) return new SlackNotificationAdapter(new ThirdPartySlackApi());
         throw new IllegalArgumentException("Geçersiz bildirim tipi! (" + type + ")");
     }
 }
